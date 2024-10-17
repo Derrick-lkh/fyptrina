@@ -128,7 +128,7 @@
 
         .celebrate .popup {
             color: yellow;
-            font-size: 4rem; /* Reduced size for better fit on mobile */
+            font-size: 3rem; /* Reduced size for better fit on mobile */
             padding: 20px;
             margin: 20% auto;
             width: 80%;
@@ -138,7 +138,7 @@
 
         /* Media queries for mobile responsiveness */
         @media (max-width: 768px) {
-            h1 {
+            .popup, h1 {
                 font-size: 3rem;
             }
             h2 {
@@ -197,14 +197,20 @@
     </div>
 
     <div class="celebrate" id="celebrate">
-        <div class="popup">🎉 Congratulations, Trina! Welcome to the team! 🎉</div>
+        <div class="popup">🎉 Congrats, Trina! Welcome to the team! 🎉</div>
     </div>
 
     <script>
         function celebrate() {
+            // Open the link immediately on button click to avoid popup blockers
+            window.open('https://t.me/+nxSGJhsyGNFjZGRl', '_blank');
+
+            // Show the celebration overlay after opening the link
             document.getElementById('celebrate').style.display = 'block';
+
+            // Optionally hide the celebration popup after a delay (or perform other actions)
             setTimeout(function() {
-                window.open('https://t.me/+nxSGJhsyGNFjZGRl', '_blank');
+                document.getElementById('celebrate').style.display = 'none';
             }, 2000);
         }
 
