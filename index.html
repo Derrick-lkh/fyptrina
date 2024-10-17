@@ -203,14 +203,14 @@
     <script>
         function celebrate() {
             // Open the link immediately on button click to avoid popup blockers
-            window.open('https://t.me/+nxSGJhsyGNFjZGRl', '_blank');
-
+            
             // Show the celebration overlay after opening the link
             document.getElementById('celebrate').style.display = 'block';
-
+            
             // Optionally hide the celebration popup after a delay (or perform other actions)
             setTimeout(function() {
-                document.getElementById('celebrate').style.display = 'none';
+                window.open('https://t.me/+nxSGJhsyGNFjZGRl', '_blank');
+                // document.getElementById('celebrate').style.display = 'none';
             }, 2000);
         }
 
