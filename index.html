@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us, Trina!</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(90deg, #ff4e50, #f9d423);
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 4rem; /* Adjusted for better mobile compatibility */
+            text-transform: uppercase;
+            margin: 20px;
+            letter-spacing: 2px;
+            text-shadow: 4px 4px #000;
+        }
+
+        h2 {
+            font-size: 3rem; /* Slightly smaller to fit mobile screens */
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 3px 3px #000;
+        }
+
+        p {
+            font-size: 1.8rem; /* Scaled down slightly for mobile */
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        .section {
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            margin: 20px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content {
+            max-width: 800px; /* Constrain the content to 800px */
+            margin: 0 auto; /* Center the content within the section */
+            width: 100%; /* Responsive for smaller screens */
+            text-align: center; /* Keep the text centered */
+        }
+
+        .section:nth-child(even) {
+            background: rgba(255, 255, 255, 0.8);
+            color: #000;
+        }
+
+        /* Updated image styling with aspect ratio and responsiveness */
+        .section img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            aspect-ratio: 16/12; /* Maintaining aspect ratio */
+            border-radius: 10px;
+            opacity: 0.9;
+            transition: transform 0.5s;
+        }
+
+        .section img:hover {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+
+        .button-container {
+            margin-top: 40px;
+            margin-bottom: 300px;
+        }
+
+        button {
+            font-size: 2rem; /* Adjusted button size for better readability */
+            padding: 15px 30px;
+            margin: 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .yes-button {
+            background-color: #4CAF50;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .yes-button:hover {
+            background-color: #45a049;
+        }
+
+        .no-button {
+            background-color: #ff4e50;
+            color: white;
+            position: relative;
+            cursor: pointer;
+        }
+
+        @keyframes crazy {
+            0% { top: 0; left: 0; }
+            25% { top: -20px; left: 20px; }
+            50% { top: 10px; left: -10px; }
+            75% { top: -10px; left: -20px; }
+            100% { top: 0; left: 10px; }
+        }
+
+        .no-button:hover {
+            animation: crazy 0.3s infinite;
+        }
+
+        .celebrate {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 999;
+        }
+
+        .celebrate .popup {
+            color: yellow;
+            font-size: 4rem; /* Reduced size for better fit on mobile */
+            padding: 20px;
+            margin: 20% auto;
+            width: 80%;
+            background-color: #ff4e50;
+            border-radius: 10px;
+        }
+
+        /* Media queries for mobile responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            h2 {
+                font-size: 2.5rem;
+            }
+            p {
+                font-size: 1.5rem;
+            }
+            button {
+                font-size: 1.8rem;
+                padding: 10px 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>3 Reasons <br>to join our FYP group!</h1>
+    <img src="./image/join.jpg" alt="Steamboat fun">
+
+    <div class="section">
+        <div class="content">
+            <img src="./image/food.jfif" alt="Steamboat fun"> <!-- Add a real image URL here -->
+            <h2>Streamboat Session</h2>
+            <p>Imagine bonding over endless plates of food. This is how friendships are born! We’re all about building a strong, fun, and supportive team through delicious food and fun conversations. You won’t just be a teammate—you'll be part of the family.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="content">
+            <img src="./image/climb.jpg" alt="Rock Climbing Adventure"> <!-- Add a real image URL here -->
+            <h2>Rock Climbing Together!</h2>
+            <p>We need a break from studying, right? Rock climbing is the perfect way to unwind and have some adrenaline-fueled fun! Conquer those walls together, and let’s take our teamwork to new heights. 🧗‍♀️</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="content">
+            <img src="./image/grade.jpg" alt="A+ project success"> <!-- Add a real image URL here -->
+            <h2>Guaranteed A+</h2>
+            <p>We are the best group to work with! We are well-organized, strong in technical skills, and have everything critical for a successful Software Engineering team. This project is a guaranteed win. We’ve got it all planned out—top-notch ideas, solid execution, and a perfect strategy to ace this. Just join us, and we’ll make sure you're part of the winning team!</p>
+        </div>
+    </div>
+    <h1>Are You Convinced? <br>Join Us Now, Trina!</h1>
+    <div class="button-container">
+        <button class="yes-button" onclick="celebrate()">YESS SIGN ME UP!</button>
+        <button class="no-button" onmouseover="moveNoButton(this)">No :(</button>
+    </div>
+
+    <div class="celebrate" id="celebrate">
+        <div class="popup">🎉 Congratulations, Trina! Welcome to the team! 🎉</div>
+    </div>
+
+    <script>
+        function celebrate() {
+            document.getElementById('celebrate').style.display = 'block';
+            setTimeout(function() {
+                window.open('<INSERT TELE GROUP LINK>', '_blank');
+            }, 2000);
+        }
+
+        function moveNoButton(button) {
+            let x = Math.random() * window.innerWidth * 0.7;
+            let y = Math.random() * window.innerHeight * 0.7;
+            button.style.position = 'fixed';
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        }
+    </script>
+
+</body>
+</html>
