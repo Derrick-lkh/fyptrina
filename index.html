@@ -159,6 +159,11 @@
         .img{
             max-width: 100%
         }
+
+        .no-button {
+            transition: all 0.1s ease; /* Smooth transition for all properties */
+        }
+
     </style>
 </head>
 <body>
@@ -193,7 +198,7 @@
     <h1>Are You Convinced? <br>Join Us Now, Trina!</h1>
     <div class="button-container">
         <button class="yes-button" onclick="celebrate()">YESS SIGN ME UP!</button>
-        <button class="no-button" onmouseover="moveNoButton(this)">No :(</button>
+        <button class="no-button" ontouchstart="moveNoButton(this)" onmouseover="moveNoButton(this)">No :(</button>
     </div>
 
     <div class="celebrate" id="celebrate">
@@ -207,8 +212,15 @@
         }
 
         function moveNoButton(button) {
-            let x = Math.random() * window.innerWidth * 0.7;
-            let y = Math.random() * window.innerHeight * 0.7;
+            // Get button dimensions
+            const buttonWidth = button.offsetWidth;
+            const buttonHeight = button.offsetHeight;
+
+            // Calculate new positions ensuring the button stays within view
+            let x = Math.random() * (window.innerWidth - buttonWidth);
+            let y = Math.random() * (window.innerHeight - buttonHeight) *  0.7;
+
+            // Apply the new position
             button.style.position = 'fixed';
             button.style.left = x + 'px';
             button.style.top = y + 'px';
